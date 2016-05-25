@@ -4,7 +4,7 @@
 
 - name: LOGGING | Download logging files from Kubernetes repo
   get_url:
-    url=https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes/master/cluster/addons/fluentd-elasticsearch/{{ item }}
+    url=https://github.com/indigo-dc/kubernetes/tree/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/cluster-logging/{{ item }}
     dest="{{ kube_addons_dir }}/cluster-logging/"
     force=yes
     validate_certs=False

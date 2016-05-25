@@ -10,7 +10,7 @@
 
 - name: MONITORING | Download monitoring files from Kubernetes repo
   local_action: get_url
-    url=https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes/master/cluster/addons/cluster-monitoring/influxdb/{{ item }}
+    url=https://github.com/indigo-dc/kubernetes/tree/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/cluster-monitoring/{{ item }}
     dest="{{ local_temp_addon_dir }}/cluster-monitoring/{{ item }}.j2"
     force=yes
   sudo: no
