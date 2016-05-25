@@ -1,0 +1,9 @@
+---
+# This playbook installs ha-proxy and keepalived on all lb hosts
+#
+# # Apply common configuration to all hosts
+ - hosts: all
+   remote_user: root
+   roles:
+    - haproxy
+    - keepalived 
