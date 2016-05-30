@@ -39,7 +39,7 @@ listen stats :9000
     stats uri /
 
 frontend kubernetes-api
-    bind 90.147.170.172:8443
+    bind {{ groups['vip'] | first }}:8443
     default_backend kubernetes-api
     mode tcp
     option tcplog
@@ -49,5 +49,9 @@ backend kubernetes-api
     mode tcp
     option tcplog
 {% for server in groups['lbs'] %}
-    server	"{{ hostvars[server]['name'] }} {{ hostvars[server]['ansible_eth0']['ipv4']['address'] }}:443"
+{% if loop.first %}
+    server	{{ hostvars[server]['name'] }} {{ hostvars[server]['ansible_eth0']['ipv4']['address'] }}:443
+{% else %}
+    server      {{ hostvars[server]['name'] }} {{ hostvars[server]['ansible_eth0']['ipv4']['address'] }}:443 backup
+{% endif %}
 {% endfor %}

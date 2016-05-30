@@ -4,7 +4,7 @@
 
 - name: KUBE-DASH | Download kube-dash files from Kubernetes repo
   get_url:
-    url=https://github.com/indigo-dc/kubernetes/tree/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-dash/{{ item }}
+    url=https://raw.githubusercontent.com/indigo-dc/kubernetes/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-dash/{{ item }}
     dest="{{ kube_addons_dir }}/kube-dash/"
     force=yes
     validate_certs=False

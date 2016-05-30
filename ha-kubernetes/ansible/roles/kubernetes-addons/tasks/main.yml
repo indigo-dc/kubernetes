@@ -13,7 +13,7 @@
 
 - name: Make sure the system services namespace exists
   get_url:
-    url=https://github.com/indigo-dc/kubernetes/blob/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/namespace.yaml
+    url=https://raw.githubusercontent.com/indigo-dc/kubernetes/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/namespace.yaml
     dest="{{ kube_config_dir }}/addons/"
     force=yes
     validate_certs=False
@@ -39,7 +39,7 @@
 
 - name: Get kube-addons script from Kubernetes
   get_url:
-    url=https://github.com/indigo-dc/kubernetes/tree/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-addons.sh
+    url=https://raw.githubusercontent.com/indigo-dc/kubernetes/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-addons.sh
     dest={{ kube_script_dir }}/kube-addons.sh mode=0755
     force=yes
   notify:
@@ -47,7 +47,7 @@
 
 - name: Get kube-addon-update script from Kubernetes
   get_url:
-    url=https://github.com/indigo-dc/kubernetes/tree/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-addon-update.sh
+    url=https://raw.githubusercontent.com/indigo-dc/kubernetes/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/kube-addon-update.sh
     dest={{ kube_script_dir }}/kube-addon-update.sh mode=0755
     force=yes
   notify:

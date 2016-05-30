@@ -1,2 +1,6 @@
 [lbs]
-90.147.102.190  name=ha-kube-lb01
+90.147.102.60 name=tspeth-ha-kube-master01
+90.147.102.61 name=tspeth-ha-kub-node01
+
+[vip]
+90.147.102.60
