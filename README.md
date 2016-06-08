@@ -22,4 +22,3 @@ It's written to install a Kubernetes Cluster with 2 Master Server, and with N pi
 
 #### Known and open issues
 
-Currently the script can't handle the keepalived configuration for LoadBalancing. The configuration have to update manually, and restart keepalived and haproxy service.
