@@ -1,10 +1,10 @@
 [masters]
-90.147.102.60
+<MASTER_IP>
 
 [etcd]
-90.147.102.60
-90.147.102.61
+<ETCD_IP>
+<ETCD_IP>
 
 [nodes]
-90.147.102.61
-90.147.102.41
+<NODE_IP>
+<NODE_IP>

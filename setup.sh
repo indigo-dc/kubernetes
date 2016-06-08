@@ -69,7 +69,8 @@ do
   echo "INFO: Setting sysctl parameter, and selinux for haproxy on $i"
   ssh root@$i 'echo net.ipv4.ip_nonlocal_bind=1 > /etc/sysctl.conf;sysctl -p &> /dev/null;setsebool -P haproxy_connect_any=1'
 done
-
+}
+test(){
 if [ $? -eq 0 ]
 then
   echo -en $COL_INFO
@@ -431,4 +432,5 @@ MASTER2=`cat setup.conf | grep MASTER | cut -d"=" -f2 | tail -1`
 export MASTER1
 export MASTER2
 
-main
+#main
+test

@@ -31,7 +31,7 @@
 - name: Get the master token values
   slurp:
 #    src: "{{ kube_token_dir }}/{{ item }}-{{ inventory_hostname }}.token"
-    src: "{{ kube_token_dir }}/{{ item }}-90.147.170.172.token"
+    src: "{{ kube_token_dir }}/{{ item }}-90.147.102.60.token"
   with_items:
     - "system:controller_manager"
     - "system:scheduler"

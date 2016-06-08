@@ -2,6 +2,14 @@
 - name: Install keepalived
   action: "{{ ansible_pkg_mgr }} name=keepalived state=present"
 
+- name: Configure keepalived
+  template:
+    src: keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable and start keepalived
   service:
     name: keepalived

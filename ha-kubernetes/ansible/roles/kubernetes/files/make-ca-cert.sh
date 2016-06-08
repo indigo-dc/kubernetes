@@ -92,7 +92,7 @@ cd "${tmpdir}"
 octets=($(echo "${service_range}" | sed -e 's|/.*||' -e 's/\./ /g'))
 ((octets[3]+=1))
 service_ip=$(echo "${octets[*]}" | sed 's/ /./g')
-master_name="90.147.170.172"
+master_name="90.147.102.60"
 # Determine appropriete subject alt names
 sans="IP:${cert_ip},IP:${service_ip},DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.${dns_domain},DNS:${master_name}"
 
