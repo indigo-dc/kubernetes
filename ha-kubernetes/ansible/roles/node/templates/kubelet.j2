@@ -11,7 +11,7 @@ KUBELET_ADDRESS="--address=0.0.0.0"
 KUBELET_HOSTNAME="--hostname-override={{ inventory_hostname }}"
 
 # location of the api-server
-KUBELET_API_SERVER="--api-servers=https://90.147.102.60:8443"
+KUBELET_API_SERVER="--api-servers=https://90.147.170.172:8443"
 
 {% set kubelet_options = [] -%}
 {% if dns_setup -%}
