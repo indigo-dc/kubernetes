@@ -399,6 +399,7 @@ echo -en $COL_INFO
 echo "INFO: Creating secret.yaml"
 echo -en $COL_NORMAL
 wget https://raw.githubusercontent.com/indigo-dc/kubernetes/master/ha-kubernetes/ansible/roles/kubernetes-addons/files/make-cert.sh
+chmod 755 make-cert.sh
 ./make-cert.sh nginxsecret secret.yaml nginx.key nginx.crt 
 rm -f nginx.*
 
