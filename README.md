@@ -1,3 +1,25 @@
+# What is Kubernetes?
+Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts, providing container-centric infrastructure.
+
+With Kubernetes, you are able to quickly and efficiently respond to customer demand:
+
+ - Deploy your applications quickly and predictably.
+ - Scale your applications on the fly.
+ - Seamlessly roll out new features.
+ - Optimize use of your hardware by using only the resources you need.
+
+### Kubernetes is
+ - portable: public, private, hybrid, multi-cloud
+ - extensible: modular, pluggable, hookable, composable
+ - self-healing: auto-placement, auto-restart, auto-replication, auto-scaling
+
+# Indigo Kubernetes Cluster
+
+To running the container services there is a Kubernetes Cluster installed for Indigo services. Currently the following services using Container technology:
+ - accounting
+ - zabbix monitoring
+ - im
+
 # Kubernetes Cluster Installation
 
 ## Components
@@ -15,11 +37,18 @@ It's written to install a Kubernetes Cluster with 2 Master Server, and with N pi
 The playbook provided for Kubernetes https://github.com/kubernetes/contrib/ does not support the HA installation by default. The document explains in detail, how the HA installation was performed and the changes required in the playbook for the same.
 
 ## Installation
+
+The service is able to run on Fedora 23 and on Ubuntu 11 servers.
+
 ### Pre-requisites
-The playbooks are run as user root. The ssh key needs to be copied on all nodes. The below packages are also installed before hand. These can be later included in the playbook
-```
-dnf install python git python-netaddr python-dnf libselinux-python
-```
+The playbooks are run as user root. The ssh key needs to be copied on all nodes. The following packages should be installed before playbook run on all machine.
+
+- python 
+- git 
+- python-netaddr
+- python-dnf 
+- libselinux-python
+
 To make haproxy working we need to change net.ipv4.ip_nonlocal_bind kernelparameter as well, so we need to edit /etc/sysctl.conf
 ```
 net.ipv4.ip_nonlocal_bind=1
@@ -109,7 +138,7 @@ INVENTORY=inventory.ha ./setup.sh --tags=masters
   * LoadBalancer uService for service routing  
 
 ## Automation
-The full installation automized with a simple shell script.
+The full installation automized with a simple shell script for Fedora 23.
 
 * Pull the repositoy to your installer Machine
 * Adjust the setup.conf with the necessary parameters. Example: LB_IP=1.2.3.4 You can extend the list of the servers as much as you need. If you don't have/need any kind of informations, which is listed in file just delete the line.
