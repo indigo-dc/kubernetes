@@ -144,6 +144,16 @@ The full installation automized with a simple shell script for Fedora 23.
 * Adjust the setup.conf with the necessary parameters. Example: LB_IP=1.2.3.4 You can extend the list of the servers as much as you need. If you don't have/need any kind of informations, which is listed in file just delete the line.
 * Run setup.sh command
 
+## Upgrade
+You are able to upgrade the environment to any version with a few steps:
+* Download source binaries from https://github.com/kubernetes/kubernetes/releases/ and extract to the upgrade folder
+* Stop the cluster
+* Open server.sh, and change the MASTER variable to the right IP
+* Execute this step on all the master servers
+* Open node.sh and change the NODE variable to the right IP
+* Execute this step on all the node servers
+* Reboot all server (master and node)
+
 ## Backup/Restore
 ### Loadbalancer/Kubernetes
 There is no backup service for the Main components, as it can be restored any time from the Playbooks.
